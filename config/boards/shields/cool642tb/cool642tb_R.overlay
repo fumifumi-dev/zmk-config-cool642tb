@@ -4,6 +4,13 @@
 
 &zip_temp_layer {
     require-prior-idle-ms = <120>;
+    exclude-positions = <
+        8
+        9
+        18
+        19
+        31
+    >;
 };
 
 &default_transform {
