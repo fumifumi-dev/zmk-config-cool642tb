@@ -75,7 +75,7 @@
 
     input-processors =
         <&zip_xy_transform (90)>,
-        //<&zip_xy_scaler 1 (-1)>,
+        <&zip_xy_scaler 1 (-1)>,
         <&zip_temp_layer 4 10000>;
 
     scroller {
