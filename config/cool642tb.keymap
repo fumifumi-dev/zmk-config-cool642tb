@@ -25,11 +25,10 @@
 / {
     vbatt {
         compatible = "zmk,battery-voltage-divider";
-        label = "BATTERY";
         io-channels = <&adc 7>;
         output-ohms = <1000000>;
         full-ohms = <2000000>;
-        voltage-to-percent-map =
+        voltage-to-procent-map =
             <2800 100>,
             <2000 0>;
     };
