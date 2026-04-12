@@ -1,8 +1,8 @@
+#include <input/processors.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <input/processors.dtsi>
 
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 40
 #define MAIN 0
@@ -18,16 +18,14 @@
     require-prior-idle-ms = <100>;
 };
 
-&mkp_input_listener {
-    input-processors = <&zip_temp_layer 4 800>;
-};
+&mkp_input_listener { input-processors = <&zip_temp_layer 4 800>; };
 
 / {
     vbatt {
         compatible = "zmk,battery-voltage-divider";
         io-channels = <&adc 7>;
         output-ohms = <300000>;
-        full-ohms   = <1390000>;
+        full-ohms = <1390000>;
     };
 
     combos {
@@ -83,12 +81,13 @@
     };
 
     behaviors {
-        scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
+        scroll_up_down: scroll_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
 
-            tap-ms = <40>;
+            tap-ms = <20>;
+            label = "SCROLL_UP_DOWN";
         };
 
         mm_scln: mm_scln {
@@ -132,24 +131,16 @@
             bindings = <&kp>, <&kp_exit_AML>;
 
             tapping-term-ms = <200>;
-            flavor = "balanced";
+            flavor = "hold-preferred";
             quick-tap-ms = <0>;
         };
     };
 
     macros {
-        exit_AML: exit_AML {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&tog_off 4>;
-            label = "EXIT_AML";
-            tap-ms = <5>;
-        };
-
         kp_exit_AML: kp_exit_AML {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &exit_AML>;
+            bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &tog_off 4>;
             label = "KP_EXIT_AML";
             tap-ms = <5>;
         };
@@ -162,7 +153,7 @@
             bindings = <
 &kp Q       &kp W         &kp E         &kp R     &kp T                                                           &kp Y                  &kp U  &kp I      &kp O       &kp P
 &kp A       &kp S         &kp D         &kp F     &kp G        &mkp MB3              &kp LG(P)                    &kp H                  &kp J  &kp K      &kp L       &mm_scln
-&kp Z       &kp X         &kp C         &kp V     &kp B        &kp LG(LA(K))         &kp C_MUTE                   &kp N                  &kp M  &kp COMMA  &kp PERIOD  &mm_unds
+&kp Z       &kp X         &kp C         &kp V     &kp B        &kp LG(LA(K))         &lt 5 C_MUTE                 &kp N                  &kp M  &kp COMMA  &kp PERIOD  &mm_unds
 &caps_word  &kp LEFT_GUI  &kp LEFT_ALT  &td_l3bt  &lt 1 SPACE  &mt LEFT_CONTROL TAB  &mt RIGHT_CONTROL BACKSPACE  &mt RIGHT_SHIFT ENTER                                &lt 2 DELETE
             >;
 
@@ -182,10 +173,10 @@
 
         fn_layer {
             bindings = <
-&kp F1      &kp F2                   &kp F3         &kp F4   &kp F5                                    &kp F6        &kp F7           &kp F8       &kp F9      &kp F10
-&kp ESCAPE  &kp LANG_ZENKAKUHANKAKU  &kp CAPSLOCK   &none    &bt BT_SEL 3  &kp LG(P)   &bt BT_SEL 0    &bt BT_SEL 1  &kp PRINTSCREEN  &none        &kp F11     &kp F12
-&kp HOME    &kp PAGE_UP              &kp PAGE_DOWN  &kp END  &bt BT_SEL 4  &bt BT_CLR  &bt BT_CLR_ALL  &bt BT_SEL 2  &kp SCROLLLOCK   &kp C_PAUSE  &kp INSERT  &kp RIGHT_ALT
-&to 0       &trans                   &trans         &trans   &trans        &trans      &trans          &trans                                                  &trans
+&kp F1      &kp F2                   &kp F3         &kp F4   &kp F5                     &kp F6  &kp F7           &kp F8       &kp F9      &kp F10
+&kp ESCAPE  &kp LANG_ZENKAKUHANKAKU  &kp CAPSLOCK   &none    &none   &kp LG(P)  &none   &none   &kp PRINTSCREEN  &none        &kp F11     &kp F12
+&kp HOME    &kp PAGE_UP              &kp PAGE_DOWN  &kp END  &none   &none      &none   &none   &kp SCROLLLOCK   &kp C_PAUSE  &kp INSERT  &kp RIGHT_ALT
+&to 0       &trans                   &trans         &trans   &trans  &trans     &trans  &trans                                            &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_BRI_DN C_BRI_UP>;
@@ -204,13 +195,22 @@
 
         mouse_layer {
             bindings = <
-&trans                                     &trans                                 &trans                                 &trans  &trans                                                &trans  &trans    &trans         &mkp MB3  &mkp MB2
-&trans                                     &trans                                 &trans                                 &trans  &trans  &trans                                &trans  &trans  &mkp MB1  &msc SCRL_UP   &trans    &trans
-&trans                                     &trans                                 &trans                                 &trans  &trans  &trans                                &trans  &trans  &trans    &msc SCRL_DOWN &trans    &trans
-&mt_exit_AML_on_tap LEFT_SHIFT LEFT_SHIFT  &mt_exit_AML_on_tap LEFT_GUI LEFT_GUI  &mt_exit_AML_on_tap LEFT_ALT LEFT_ALT  &trans  &trans  &mt_exit_AML_on_tap LEFT_CONTROL TAB  &trans  &trans                                     &trans
+&trans                                     &trans                                 &trans                                 &trans  &trans                                                &trans  &trans    &trans          &mkp MB3  &mkp MB2
+&trans                                     &trans                                 &trans                                 &trans  &trans  &trans                                &trans  &trans  &mkp MB1  &msc SCRL_UP    &trans    &trans
+&trans                                     &trans                                 &trans                                 &trans  &trans  &trans                                &trans  &trans  &trans    &msc SCRL_DOWN  &trans    &trans
+&mt_exit_AML_on_tap LEFT_SHIFT LEFT_SHIFT  &mt_exit_AML_on_tap LEFT_GUI LEFT_GUI  &mt_exit_AML_on_tap LEFT_ALT LEFT_ALT  &trans  &trans  &mt_exit_AML_on_tap LEFT_CONTROL TAB  &trans  &trans                                      &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
+        };
+
+        bt_layer {
+            bindings = <
+&none  &none  &none  &none  &none                 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&none  &none  &none  &none  &none  &none  &none   &none         &none         &none         &none         &none
+&none  &none  &none  &none  &none  &none  &trans  &none         &none         &none         &none         &bt BT_CLR
+&none  &none  &none  &none  &none  &none  &none   &none                                                   &bt BT_CLR_ALL
+            >;
         };
     };
 };
