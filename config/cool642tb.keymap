@@ -10,6 +10,7 @@
 #define FN 2
 #define ARROW 3
 #define MOUSE 4
+#define BT 5
 
 &mt {
     flavor = "balanced";
