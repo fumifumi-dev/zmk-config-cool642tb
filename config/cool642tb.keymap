@@ -196,9 +196,9 @@
 
         mouse_layer {
             bindings = <
-&trans                                     &trans                                 &trans                                 &trans  &trans                                                &trans  &trans    &trans          &mkp MB3  &mkp MB2
-&trans                                     &trans                                 &trans                                 &trans  &trans  &trans                                &trans  &trans  &mkp MB1  &msc SCRL_UP    &trans    &trans
-&trans                                     &trans                                 &trans                                 &trans  &trans  &trans                                &trans  &trans  &trans    &msc SCRL_DOWN  &trans    &trans
+&trans                                     &trans                                 &trans                                 &trans  &trans                                                &trans  &trans    &msc SCRL_UP    &trans    &trans
+&trans                                     &trans                                 &trans                                 &trans  &trans  &trans                                &trans  &trans  &mkp MB1  &msc SCRL_DOWN  &mkp MB2  &trans
+&trans                                     &trans                                 &trans                                 &trans  &trans  &trans                                &trans  &trans  &trans    &mkp MB3        &trans    &trans
 &mt_exit_AML_on_tap LEFT_SHIFT LEFT_SHIFT  &mt_exit_AML_on_tap LEFT_GUI LEFT_GUI  &mt_exit_AML_on_tap LEFT_ALT LEFT_ALT  &trans  &trans  &mt_exit_AML_on_tap LEFT_CONTROL TAB  &trans  &trans                                      &trans
             >;
 
