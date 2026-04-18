@@ -83,15 +83,6 @@
     };
 
     behaviors {
-        scroll_up_down: scroll_up_down {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-
-            tap-ms = <20>;
-            label = "SCROLL_UP_DOWN";
-        };
-
         mm_scln: mm_scln {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_SCLN";
@@ -159,7 +150,7 @@
 &caps_word  &kp LEFT_GUI  &kp LEFT_ALT  &td_l3bt  &lt 1 SPACE  &mt LEFT_CONTROL TAB  &mt RIGHT_CONTROL BACKSPACE  &mt RIGHT_SHIFT ENTER                                &lt 2 DELETE
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         symbol_layer {
@@ -167,7 +158,7 @@
 &kp EXCLAMATION   &kp QUESTION  &kp UNDERSCORE  &kp AMPERSAND            &kp PLUS                                               &kp DOUBLE_QUOTES  &kp N7        &kp N8        &kp N9        &kp COLON
 &kp CARET         &kp HASH      &kp DOLLAR      &kp AT_SIGN              &kp LEFT_BRACE       &kp C_MUTE     &none              &kp LS(LG(S))      &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp MINUS
 &kp LEFT_BRACKET  &kp PERCENT   &kp EQUAL       &kp LS(INTERNATIONAL_3)  &kp INTERNATIONAL_1  &kp LG(LA(K))  &none              &kp PRINTSCREEN    &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH
-&trans            &trans        &trans          &trans                   &trans               &trans         &kp K_APPLICATION  &kp N0                                                       &to 2
+&kp ESCAPE        &trans        &trans          &trans                   &trans               &trans         &kp K_APPLICATION  &kp N0                                                       &to 2
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -186,24 +177,24 @@
 
         arrow_layer {
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4  &kp F5                 &kp F6      &kp HOME        &kp UP_ARROW    &kp END          &kp F10
-&trans  &trans  &trans  &trans  &trans  &none  &none   &kp LC(V)   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp LC(X)
-&trans  &trans  &trans  &trans  &trans  &none  &none   &kp LC(C)   &kp F7          &kp F8          &kp F9           &kp RIGHT_ALT
-&none   &trans  &trans  &trans  &none   &none  &trans  &trans                                                       &trans
+&kp F1       &kp F2  &kp F3  &kp F4  &kp F5                 &kp F6      &kp HOME        &kp UP_ARROW    &kp END          &kp F10
+&trans       &trans  &trans  &trans  &trans  &none  &none   &kp LC(V)   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp LC(X)
+&trans       &trans  &trans  &trans  &trans  &none  &none   &kp LC(C)   &kp F7          &kp F8          &kp F9           &kp RIGHT_ALT
+&kp ESCAPE   &trans  &trans  &trans  &none   &none  &trans  &trans                                                       &trans
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
 
-        mouse_layer {
+       mouse_layer {
             bindings = <
-&trans                                     &trans                                 &trans                                 &trans  &trans                                                &trans  &trans    &msc SCRL_UP    &trans    &trans
-&trans                                     &trans                                 &trans                                 &trans  &trans  &trans                                &trans  &trans  &mkp MB1  &msc SCRL_DOWN  &mkp MB2  &trans
-&trans                                     &trans                                 &trans                                 &trans  &trans  &trans                                &trans  &trans  &trans    &mkp MB3        &trans    &trans
-&mt_exit_AML_on_tap LEFT_SHIFT LEFT_SHIFT  &mt_exit_AML_on_tap LEFT_GUI LEFT_GUI  &mt_exit_AML_on_tap LEFT_ALT LEFT_ALT  &trans  &trans  &mt_exit_AML_on_tap LEFT_CONTROL TAB  &trans  &trans                                      &trans
+&trans                                     &trans                                 &trans                                 &trans  &trans                                                &trans  &trans    &trans    &trans    &trans
+&trans                                     &trans                                 &trans                                 &trans  &trans  &trans                                &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
+&trans                                     &trans                                 &trans                                 &trans  &trans  &trans                                &trans  &trans  &trans    &trans    &trans    &trans
+&mt_exit_AML_on_tap LEFT_SHIFT LEFT_SHIFT  &mt_exit_AML_on_tap LEFT_GUI LEFT_GUI  &mt_exit_AML_on_tap LEFT_ALT LEFT_ALT  &trans  &trans  &mt_exit_AML_on_tap LEFT_CONTROL TAB  &trans  &trans                                &trans
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
 
         bt_layer {
