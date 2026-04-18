@@ -22,6 +22,10 @@
 
 &mkp_input_listener { input-processors = <&zip_temp_layer 4 800>; };
 
+&caps_word {
+    continue-list = <UNDERSCORE MINUS SINGLE_QUOTE BACKSPACE DELETE>;
+};
+
 / {
     vbatt {
         compatible = "zmk,battery-voltage-divider";
@@ -83,6 +87,14 @@
     };
 
     behaviors {
+        scroll_up_down: scroll_up_down {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
+            tap-ms = <20>;
+        };
+
         mm_scln: mm_scln {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_SCLN";
@@ -150,7 +162,7 @@
 &caps_word  &kp LEFT_GUI  &kp LEFT_ALT  &td_l3bt  &lt 1 SPACE  &mt LEFT_CONTROL TAB  &mt RIGHT_CONTROL BACKSPACE  &mt RIGHT_SHIFT ENTER                                &lt 2 DELETE
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         symbol_layer {
@@ -177,10 +189,10 @@
 
         arrow_layer {
             bindings = <
-&kp F1       &kp F2  &kp F3  &kp F4  &kp F5                 &kp F6      &kp HOME        &kp UP_ARROW    &kp END          &kp F10
-&trans       &trans  &trans  &trans  &trans  &none  &none   &kp LC(V)   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp LC(X)
-&trans       &trans  &trans  &trans  &trans  &none  &none   &kp LC(C)   &kp F7          &kp F8          &kp F9           &kp RIGHT_ALT
-&kp ESCAPE   &trans  &trans  &trans  &none   &none  &trans  &trans                                                       &trans
+&kp F1       &kp F2  &kp F3  &kp F4        &kp F5                          &kp F6      &kp HOME        &kp UP_ARROW    &kp END          &kp F10
+&trans       &trans  &trans  &msc SCRL_UP  &msc SCRL_DOWN  &none   &none   &kp LC(V)   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp LC(X)
+&trans       &trans  &trans  &trans        &trans          &none   &none   &kp LC(C)   &kp F7          &kp F8          &kp F9           &kp RIGHT_ALT
+&kp ESCAPE   &trans  &trans  &trans        &trans          &trans  &trans  &trans                                                       &trans
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -194,7 +206,7 @@
 &mt_exit_AML_on_tap LEFT_SHIFT LEFT_SHIFT  &mt_exit_AML_on_tap LEFT_GUI LEFT_GUI  &mt_exit_AML_on_tap LEFT_ALT LEFT_ALT  &trans  &trans  &mt_exit_AML_on_tap LEFT_CONTROL TAB  &trans  &trans                                &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         bt_layer {
