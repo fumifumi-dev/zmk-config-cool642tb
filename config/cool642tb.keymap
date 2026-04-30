@@ -99,7 +99,7 @@
         mm_unds: mm_unds {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_UNDS";
-            bindings = <&kp UNDERSCORE>, <&kp INT_YEN>;
+            bindings = <&kp LS(INT1)>, <&kp INT_YEN>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -170,10 +170,10 @@
 
         fn_layer {
             bindings = <
-&kp F1      &kp F2                   &kp F3         &kp F4   &kp F5                     &kp F6  &kp F7           &kp F8       &kp F9      &kp F10
-&to 0       &kp LANG_ZENKAKUHANKAKU  &kp CAPSLOCK   &none    &none   &kp LG(P)  &none   &none   &kp PRINTSCREEN  &none        &kp F11     &kp F12
-&kp HOME    &kp PAGE_UP              &kp PAGE_DOWN  &kp END  &none   &none      &none   &none   &kp SCROLLLOCK   &kp C_PAUSE  &kp INSERT  &kp RIGHT_ALT
-&kp ESCAPE  &trans                   &trans         &trans   &trans  &trans     &trans  &trans                                            &trans
+&kp F1      &kp F2      &kp F3         &kp F4   &kp F5                     &kp F6  &kp F7           &kp F8       &kp F9      &kp F10
+&to 0       &kp GRAVE   &kp CAPSLOCK   &none    &none   &kp LG(P)  &none   &none   &kp PRINTSCREEN  &none        &kp F11     &kp F12
+&kp HOME    &kp PAGE_UP &kp PAGE_DOWN  &kp END  &none   &none      &none   &none   &kp SCROLLLOCK   &kp C_PAUSE  &kp INSERT  &kp RIGHT_ALT
+&kp ESCAPE  &trans      &trans         &trans   &trans  &trans     &trans  &trans                                            &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_BRI_DN C_BRI_UP>;
