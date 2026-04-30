@@ -23,7 +23,7 @@
 &mkp_input_listener { input-processors = <&zip_temp_layer 4 800>; };
 
 &caps_word {
-    continue-list = <LS(INT1) MINUS SINGLE_QUOTE BACKSPACE DELETE>;
+    continue-list = <LS(INTERNATIONAL_1) MINUS SINGLE_QUOTE BACKSPACE DELETE>;
 };
 
 / {
@@ -99,7 +99,7 @@
         mm_unds: mm_unds {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_UNDS";
-            bindings = <&kp LS(INT1)>, <&kp INT_YEN>;
+            bindings = <&kp LS(INTERNATIONAL_1)>, <&kp INTERNATIONAL_3>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
