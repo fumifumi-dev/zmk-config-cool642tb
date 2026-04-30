@@ -23,7 +23,7 @@
 &mkp_input_listener { input-processors = <&zip_temp_layer 4 800>; };
 
 &caps_word {
-    continue-list = <UNDERSCORE MINUS SINGLE_QUOTE BACKSPACE DELETE>;
+    continue-list = <LS(INT1) MINUS SINGLE_QUOTE BACKSPACE DELETE>;
 };
 
 / {
