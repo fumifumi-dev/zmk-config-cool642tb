@@ -30,8 +30,15 @@
     vbatt {
         compatible = "zmk,battery-voltage-divider";
         io-channels = <&adc 7>;
-        output-ohms = <193000>;
-        full-ohms = <1390000>;
+        /*
+         * 2.80V 100%
+         * 2.53V 60%
+         * 2.41V 40%
+         * 2.40V 20%
+         * 2.13V 0%
+         */
+        output-ohms = <510000>;
+        full-ohms = <2265000>;
     };
 
     combos {
