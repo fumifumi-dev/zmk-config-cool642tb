@@ -60,7 +60,7 @@
             require-prior-idle-ms = <50>;
         };
 
-        CM_LBR {
+        CM_LBRC {
             bindings = <&kp RIGHT_BRACKET>;
             key-positions = <18 19>;
             layers = <1>;
@@ -68,7 +68,7 @@
             require-prior-idle-ms = <50>;
         };
 
-        CM_RBR {
+        CM_RBRC {
             bindings = <&kp NON_US_HASH>;
             key-positions = <19 20>;
             layers = <1>;
@@ -76,7 +76,7 @@
             require-prior-idle-ms = <50>;
         };
 
-        CM_LCB {
+        CM_LCBR {
             bindings = <&kp RIGHT_BRACE>;
             key-positions = <30 31>;
             layers = <1>;
@@ -84,7 +84,7 @@
             require-prior-idle-ms = <50>;
         };
 
-        CM_RCB {
+        CM_RCBR {
             bindings = <&kp PIPE>;
             key-positions = <31 32>;
             layers = <1>;
@@ -103,10 +103,10 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        mm_unds: mm_unds {
+        mm_unds: mm_minus {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_UNDS";
-            bindings = <&kp LS(INTERNATIONAL_1)>, <&kp INTERNATIONAL_3>;
+            bindings = <&kp MINUS>, <&kp LS(INTERNATIONAL_1)>>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -156,8 +156,8 @@
         main_layer {
             bindings = <
 &kp Q       &kp W         &kp E         &kp R     &kp T                                                           &kp Y                  &kp U  &kp I      &kp O       &kp P
-&kp A       &kp S         &kp D         &kp F     &kp G        &kp C_MUTE            &kp LG(LA(K))                &kp H                  &kp J  &kp K      &kp L       &mm_scln
-&kp Z       &kp X         &kp C         &kp V     &kp B        &kp LG(P)             &lt 5 C_MUTE                 &kp N                  &kp M  &kp COMMA  &kp PERIOD  &mm_unds
+&kp A       &kp S         &kp D         &kp F     &kp G        &kp C_MUTE            &kp LG(LA(K))                &kp H                  &kp J  &kp K      &kp L       &mm_minus
+&kp Z       &kp X         &kp C         &kp V     &kp B        &kp LG(P)             &lt 5 C_MUTE                 &kp N                  &kp M  &kp COMMA  &kp PERIOD  &mm_scln
 &caps_word  &kp LEFT_GUI  &kp LEFT_ALT  &td_l3bt  &lt 1 SPACE  &mt LEFT_CONTROL TAB  &mt RIGHT_CONTROL BACKSPACE  &mt RIGHT_SHIFT ENTER                                &lt 2 DELETE
             >;
 
@@ -166,9 +166,9 @@
 
         symbol_layer {
             bindings = <
-&kp EXCLAMATION   &kp QUESTION  &kp UNDERSCORE  &kp AMPERSAND            &kp PLUS                                &kp DOUBLE_QUOTES  &kp N7        &kp N8        &kp N9        &kp COLON
-&kp CARET         &kp HASH      &kp DOLLAR      &kp AT_SIGN              &kp LEFT_BRACE       &trans     &trans  &kp LS(LG(S))      &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp MINUS
-&kp LEFT_BRACKET  &kp PERCENT   &kp EQUAL       &kp LS(INTERNATIONAL_3)  &kp INTERNATIONAL_1  &trans     &trans  &kp PRINTSCREEN    &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH
+&kp EXCLAMATION   &kp QUESTION  &kp UNDERSCORE  &kp AMPERSAND            &kp PLUS                                &kp INTERNATIONAL_3  &kp N7        &kp N8        &kp N9        &kp COLON
+&kp CARET         &kp HASH      &kp DOLLAR      &kp AT_SIGN              &kp LEFT_BRACE       &trans     &trans  &kp LS(LG(S))        &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp DOUBLE_QUOTES
+&kp LEFT_BRACKET  &kp PERCENT   &kp EQUAL       &kp LS(INTERNATIONAL_3)  &kp INTERNATIONAL_1  &trans     &trans  &kp PRINTSCREEN      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH
 &kp ESCAPE        &trans        &trans          &trans                   &trans               &trans     &trans  &kp N0                                                       &to 2
             >;
 
@@ -177,10 +177,10 @@
 
         fn_layer {
             bindings = <
-&kp F1      &kp F2      &kp F3         &kp F4   &kp F5                     &kp F6  &kp F7           &kp F8       &kp F9      &kp F10
-&to 0       &kp GRAVE   &kp CAPSLOCK   &none    &none   &kp LG(P)  &none   &none   &kp PRINTSCREEN  &none        &kp F11     &kp F12
-&kp HOME    &kp PAGE_UP &kp PAGE_DOWN  &kp END  &none   &none      &none   &none   &kp SCROLLLOCK   &kp C_PAUSE  &kp INSERT  &kp RIGHT_ALT
-&kp ESCAPE  &trans      &trans         &trans   &trans  &trans     &trans  &trans                                            &trans
+&kp F1      &kp F2      &kp F3         &kp F4       &kp F5                     &kp F6  &kp F7           &kp F8       &kp F9      &kp F10
+&to 0       &kp GRAVE   &kp CAPSLOCK   &kp LNLCK    &none   &kp LG(P)  &none   &none   &kp PRINTSCREEN  &none        &kp F11     &kp F12
+&kp HOME    &kp PAGE_UP &kp PAGE_DOWN  &kp END      &none   &none      &none   &none   &kp SCROLLLOCK   &kp C_PAUSE  &kp INSERT  &kp RIGHT_ALT
+&kp ESCAPE  &trans      &trans         &trans       &trans  &trans     &trans  &trans                                            &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_BRI_DN C_BRI_UP>;
