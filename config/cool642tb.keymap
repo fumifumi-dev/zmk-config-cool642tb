@@ -105,7 +105,7 @@
 
         mm_unds: mm_minus {
             compatible = "zmk,behavior-mod-morph";
-            label = "MM_UNDS";
+            label = "MM_MINUS";
             bindings = <&kp MINUS>, <&kp LS(INTERNATIONAL_1)>;
 
             #binding-cells = <0>;
