@@ -103,7 +103,7 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        mm_unds: mm_minus {
+        mm_minus: mm_minus {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_MINUS";
             bindings = <&kp MINUS>, <&kp LS(INTERNATIONAL_1)>;
