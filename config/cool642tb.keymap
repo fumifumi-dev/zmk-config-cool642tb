@@ -154,22 +154,14 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
 
-            bindings =
-                <&macro_press &kp LCTRL>
-                , <&macro_tap &mkp MB1>
-                , <&macro_release &kp LCTRL>
-                ;
+            bindings = <&macro_press &kp LCTRL &macro_tap &mkp MB1 &macro_release &kp LCTRL>;
         };
 
         shift_click: shift_click {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
 
-            bindings =
-                <&macro_press &kp LSHFT>
-                , <&macro_tap &mkp MB1>
-                , <&macro_release &kp LSHFT>
-                ;
+            bindings = <&macro_press &kp LSHFT &macro_tap &mkp MB1 &macro_release &kp LSHFT>;
         };
     };
 
