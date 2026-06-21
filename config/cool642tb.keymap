@@ -240,10 +240,10 @@
 
         mouse_st_layer {
             bindings = <
-&none  &none  &none  &none  &none                &none      &ctrl_click   &msc SCRL_UP    &none     &none
-&none  &none  &none  &none  &none  &none  &none  &kp LC(V)  &mkp MB1      &mkp MB3        &mkp MB2  &kp LC(X)
-&none  &none  &none  &none  &none  &none  &none  &kp LC(C)  &shift_click  &msc SCRL_DOWN  &none     &kp LG(V)
-&none  &none  &none  &none  &none  &none  &none  &none                                              &to 0
+&none  &none  &none  &none  &none                                          &none      &ctrl_click   &msc SCRL_UP    &none     &none
+&none  &none  &none  &none  &none           &none                   &none  &kp LC(V)  &mkp MB1      &mkp MB3        &mkp MB2  &kp LC(X)
+&none  &none  &none  &none  &none           &none                   &none  &kp LC(C)  &shift_click  &msc SCRL_DOWN  &none     &kp LG(V)
+&none  &none  &none  &none  &kp LEFT_SHIFT  &kp LEFT_CONTROL        &none  &none                                              &to 0
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;

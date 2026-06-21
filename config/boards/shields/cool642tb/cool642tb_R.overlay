@@ -75,15 +75,25 @@
 &trackball_listener {
     status = "okay";
 
-    input-processors =
-        <&zip_xy_transform (90)>,
-        <&zip_xy_scaler 1 (-1)>,
-        <&zip_temp_layer 4 10000>;
+    aml_active {
+        layers = <0>;
+        input-processors =
+            <&zip_xy_transform (90)>,
+            <&zip_xy_scaler 1 (-1)>,
+            <&zip_temp_layer 4 10000>;
+    };
 
     scroller {
         layers = <3>;
         input-processors =
             <&zip_xy_scaler 1 5>,
             <&zip_xy_to_scroll_mapper>;
+    };
+
+    aml_inactive {
+        layers = <1 2 4 5>;
+        input-processors =
+            <&zip_xy_transform (90)>,
+            <&zip_xy_scaler 1 (-1)>;
     };
 };
