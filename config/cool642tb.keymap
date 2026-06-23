@@ -281,10 +281,10 @@
 
         fn_layer {
             bindings = <
-&kp F1      &kp F2     &kp F3     &kp F4     &kp F5                     &kp F6           &kp F7          &kp F8          &kp F9           &kp F10
-&kp LC(A)   &none      &none      &none      &none      &trans  &trans  &kp HOME         &kp LEFT_ARROW  &kp UP_ARROW    &kp RIGHT_ARROW  &kp END
-&kp LC(Z)   &kp LC(X)  &kp LC(C)  &kp LC(V)  &none      &trans  &trans  &kp PRINTSCREEN  &kp PAGE_UP     &kp DOWN_ARROW  &kp PAGE_DOWN    &kp RIGHT_ALT
-&kp ESCAPE  &trans     &trans     &trans     &kp SPACE  &trans  &trans  &trans                                                            &trans
+&kp F1      &kp F2     &kp F3     &kp F4     &kp F5                             &kp F6           &kp F7          &kp F8          &kp F9           &kp F10
+&kp LC(A)   &none      &none      &none      &kp K_APPLICATION  &trans  &trans  &kp HOME         &kp LEFT_ARROW  &kp UP_ARROW    &kp RIGHT_ARROW  &kp END
+&kp LC(Z)   &kp LC(X)  &kp LC(C)  &kp LC(V)  &none              &trans  &trans  &kp PRINTSCREEN  &kp PAGE_UP     &kp DOWN_ARROW  &kp PAGE_DOWN    &kp RIGHT_ALT
+&kp ESCAPE  &trans     &trans     &trans     &kp SPACE          &trans  &trans  &trans                                                            &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_BRI_DN C_BRI_UP>;
@@ -292,10 +292,10 @@
 
         mouse_layer {
             bindings = <
-&trans  &trans                                 &trans                                 &trans                                &trans                                                       &trans                                 &trans    &trans          &trans    &trans
-&trans  &trans                                 &trans                                 &trans                                &trans  &trans  &trans                                       &trans                                 &mkp MB1  &msc SCRL_UP    &mkp MB2  &trans
-&trans  &trans                                 &trans                                 &trans                                &trans  &trans  &trans                                       &trans                                 &trans    &msc SCRL_DOWN  &trans    &trans
-&trans  &mt_exit_AML_on_tap LEFT_GUI LEFT_GUI  &mt_exit_AML_on_tap LEFT_ALT LEFT_ALT  &mt_exit_AML_on_tap LEFT_CONTROL TAB  &trans  &trans  &mt_exit_AML_on_tap RIGHT_CONTROL BACKSPACE  &mt_exit_AML_on_tap RIGHT_SHIFT ENTER                                      &mt_exit_AML_on_tap RIGHT_SHIFT DELETE
+&trans  &trans        &trans        &trans                                &trans                                                       &trans                                 &trans    &trans          &trans    &trans
+&trans  &trans        &trans        &trans                                &trans  &trans  &trans                                       &trans                                 &mkp MB1  &msc SCRL_UP    &mkp MB2  &trans
+&trans  &trans        &trans        &trans                                &trans  &trans  &trans                                       &trans                                 &trans    &msc SCRL_DOWN  &trans    &trans
+&trans  &kp LEFT_GUI  &kp LEFT_ALT  &mt_exit_AML_on_tap LEFT_CONTROL TAB  &trans  &trans  &mt_exit_AML_on_tap RIGHT_CONTROL BACKSPACE  &mt_exit_AML_on_tap RIGHT_SHIFT ENTER                                      &mt_exit_AML_on_tap RIGHT_SHIFT DELETE
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -303,10 +303,10 @@
 
         mouse_st_layer {
             bindings = <
-&kp F1      &kp F2     &kp F3     &kp F4     &kp F5                     &kp F6           &kp F7       &kp F8          &kp F9         &kp F10
-&kp LC(A)   &none      &none      &none      &none      &trans  &trans  &kp HOME         &mkp MB1     &msc SCRL_UP    &mkp MB2       &kp END
-&kp LC(Z)   &kp LC(X)  &kp LC(C)  &kp LC(V)  &none      &trans  &trans  &kp PRINTSCREEN  &kp PAGE_UP  &msc SCRL_DOWN  &kp PAGE_DOWN  &kp RIGHT_ALT
-&kp ESCAPE  &trans     &trans     &trans     &kp SPACE  &mo 2   &trans  &trans                                                       &trans
+&kp F1      &kp F2     &kp F3     &kp F4     &kp F5                             &kp F6           &kp F7       &kp F8          &kp F9         &kp F10
+&kp LC(A)   &none      &none      &none      &kp K_APPLICATION  &trans  &trans  &kp HOME         &mkp MB1     &msc SCRL_UP    &mkp MB2       &kp END
+&kp LC(Z)   &kp LC(X)  &kp LC(C)  &kp LC(V)  &none              &trans  &trans  &kp PRINTSCREEN  &kp PAGE_UP  &msc SCRL_DOWN  &kp PAGE_DOWN  &kp RIGHT_ALT
+&kp ESCAPE  &trans     &trans     &trans     &kp SPACE          &mo 2   &trans  &trans                                                       &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOLUME_DOWN>;
