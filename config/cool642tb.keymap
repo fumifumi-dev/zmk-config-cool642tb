@@ -163,6 +163,30 @@
             require-prior-idle-ms = <50>;
             layers = <2 4>;
         };
+
+        CM_SYSR {
+            bindings = <&kp SYSREQ>;
+            key-positions = <1 0 2>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
+            layers = <2 4>;
+        };
+
+        CM_PUBR {
+            bindings = <&kp PAUSE_BREAK>;
+            key-positions = <1 2 3>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
+            layers = <2 4>;
+        };
+
+        CM_SLCK {
+            bindings = <&kp SCROLLLOCK>;
+            key-positions = <2 3 4>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
+            layers = <2 4>;
+        };
     };
 
     behaviors {
@@ -249,10 +273,10 @@
 
         fn_layer {
             bindings = <
-&kp F1      &kp F2     &kp F3          &kp F4       &kp F5                     &kp F6           &kp F7          &kp F8          &kp F9           &kp F10
-&kp LC(Z)   &kp LC(X)  &kp LC(C)       &kp LC(V)    &kp LC(A)  &trans  &trans  &kp HOME         &kp LEFT_ARROW  &kp UP_ARROW    &kp RIGHT_ARROW  &kp END
-&none       &none      &kp SCROLLLOCK  &kp C_PAUSE  &none      &trans  &trans  &kp PRINTSCREEN  &kp PAGE_UP     &kp DOWN_ARROW  &kp PAGE_DOWN    &kp RIGHT_ALT
-&kp ESCAPE  &trans     &trans          &trans       &kp SPACE  &trans  &trans  &trans                                                            &trans
+&kp F1      &kp F2     &kp F3     &kp F4     &kp F5                     &kp F6           &kp F7          &kp F8          &kp F9           &kp F10
+&kp LC(Z)   &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(A)  &trans  &trans  &kp HOME         &kp LEFT_ARROW  &kp UP_ARROW    &kp RIGHT_ARROW  &kp END
+&none       &none      &none      &none      &none      &trans  &trans  &kp PRINTSCREEN  &kp PAGE_UP     &kp DOWN_ARROW  &kp PAGE_DOWN    &kp RIGHT_ALT
+&kp ESCAPE  &trans     &trans     &trans     &kp SPACE  &trans  &trans  &trans                                                            &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_BRI_DN C_BRI_UP>;
