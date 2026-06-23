@@ -187,6 +187,14 @@
             require-prior-idle-ms = <50>;
             layers = <2 4>;
         };
+
+        CM_KANA {
+            bindings = <&kp INTERNATIONAL_2>;
+            key-positions = <5 6 7>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
+            layers = <2 4>;
+        };
     };
 
     behaviors {
@@ -208,9 +216,9 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        td_l3bt: td_l3bt {
+        td_l1bt: td_l1bt {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD_L3BT";
+            label = "TD_L1BT";
             #binding-cells = <0>;
             bindings = <&lt 2 INTERNATIONAL_5>, <&kp INTERNATIONAL_4>;
 
@@ -251,10 +259,10 @@
 
         main_layer {
             bindings = <
-&kp Q       &kp W         &kp E         &kp R     &kp T                                                           &kp Y                 &kp U  &kp I      &kp O       &kp P
-&kp A       &kp S         &kp D         &kp F     &kp G        &kp C_MUTE            &kp LG(LA(K))                &kp H                 &kp J  &kp K      &kp L       &mm_minus
-&kp Z       &kp X         &kp C         &kp V     &kp B        &kp LG(P)             &lt 5 C_MUTE                 &kp N                 &kp M  &kp COMMA  &kp PERIOD  &mm_scln
-&caps_word  &kp LEFT_GUI  &kp LEFT_ALT  &td_l3bt  &lt 1 SPACE  &mt LEFT_CONTROL TAB  &mt RIGHT_CONTROL BACKSPACE  &mt LEFT_SHIFT ENTER                                &mt RIGHT_SHIFT DELETE
+&kp Q       &kp W         &kp E         &kp R                 &kp T                                                 &kp Y                 &kp U  &kp I      &kp O       &kp P
+&kp A       &kp S         &kp D         &kp F                 &kp G        &kp C_MUTE  &kp LG(LA(K))                &kp H                 &kp J  &kp K      &kp L       &mm_minus
+&kp Z       &kp X         &kp C         &kp V                 &kp B        &kp LG(P)   &lt 5 C_MUTE                 &kp N                 &kp M  &kp COMMA  &kp PERIOD  &mm_scln
+&caps_word  &kp LEFT_GUI  &kp LEFT_ALT  &mt LEFT_CONTROL TAB  &lt 1 SPACE  &td_l1bt    &mt RIGHT_CONTROL BACKSPACE  &mt LEFT_SHIFT ENTER                                &mt RIGHT_SHIFT DELETE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -284,10 +292,10 @@
 
         mouse_layer {
             bindings = <
-&trans  &trans                                 &trans                                 &trans  &trans                                                                                     &trans                                 &trans    &trans          &trans    &trans
-&trans  &trans                                 &trans                                 &trans  &trans  &trans                                &trans                                       &trans                                 &mkp MB1  &msc SCRL_UP    &mkp MB2  &trans
-&trans  &trans                                 &trans                                 &trans  &trans  &trans                                &trans                                       &trans                                 &trans    &msc SCRL_DOWN  &trans    &trans
-&trans  &mt_exit_AML_on_tap LEFT_GUI LEFT_GUI  &mt_exit_AML_on_tap LEFT_ALT LEFT_ALT  &trans  &trans  &mt_exit_AML_on_tap LEFT_CONTROL TAB  &mt_exit_AML_on_tap RIGHT_CONTROL BACKSPACE  &mt_exit_AML_on_tap RIGHT_SHIFT ENTER                                      &mt_exit_AML_on_tap RIGHT_SHIFT DELETE
+&trans  &trans                                 &trans                                 &trans                                &trans                                                       &trans                                 &trans    &trans          &trans    &trans
+&trans  &trans                                 &trans                                 &trans                                &trans  &trans  &trans                                       &trans                                 &mkp MB1  &msc SCRL_UP    &mkp MB2  &trans
+&trans  &trans                                 &trans                                 &trans                                &trans  &trans  &trans                                       &trans                                 &trans    &msc SCRL_DOWN  &trans    &trans
+&trans  &mt_exit_AML_on_tap LEFT_GUI LEFT_GUI  &mt_exit_AML_on_tap LEFT_ALT LEFT_ALT  &mt_exit_AML_on_tap LEFT_CONTROL TAB  &trans  &trans  &mt_exit_AML_on_tap RIGHT_CONTROL BACKSPACE  &mt_exit_AML_on_tap RIGHT_SHIFT ENTER                                      &mt_exit_AML_on_tap RIGHT_SHIFT DELETE
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -298,7 +306,7 @@
 &kp F1      &kp F2     &kp F3     &kp F4     &kp F5                     &kp F6           &kp F7       &kp F8          &kp F9         &kp F10
 &kp LC(A)   &none      &none      &none      &none      &trans  &trans  &kp HOME         &mkp MB1     &msc SCRL_UP    &mkp MB2       &kp END
 &kp LC(Z)   &kp LC(X)  &kp LC(C)  &kp LC(V)  &none      &trans  &trans  &kp PRINTSCREEN  &kp PAGE_UP  &msc SCRL_DOWN  &kp PAGE_DOWN  &kp RIGHT_ALT
-&kp ESCAPE  &trans     &trans     &mo 2      &kp SPACE  &trans  &trans  &trans                                                       &trans
+&kp ESCAPE  &trans     &trans     &trans     &kp SPACE  &mo 2   &trans  &trans                                                       &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOLUME_DOWN>;
