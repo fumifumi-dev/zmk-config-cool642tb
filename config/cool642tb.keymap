@@ -95,9 +95,9 @@
         };
 
         CM_MSST {
-            bindings = <&tog 4>;
+            bindings = <&tog 3>;
             key-positions = <34 35>;
-            layers = <0 4>;
+            layers = <0 3>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
         };
