@@ -21,7 +21,6 @@
 };
 
 &mkp_input_listener {
-    layers = <2>;
     input-processors = <&zip_temp_layer 2 800>;
 };
 
