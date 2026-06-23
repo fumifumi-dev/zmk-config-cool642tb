@@ -8,19 +8,22 @@
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 40
 #define MAIN 0
 #define SYMBOL 1
-#define FN 2
-#define MOUSE 3
-#define MOUSE_ST 4
+#define MOUSE 2
+#define MOUSE_ST 3
+#define FN 4
 #define BT 5
 
 &mt {
     flavor = "balanced";
-    tapping-term-ms = <180>;
+    tapping-term-ms = <200>;
     quick-tap-ms = <180>;
     require-prior-idle-ms = <100>;
 };
 
-&mkp_input_listener { input-processors = <&zip_temp_layer 3 800>; };
+&mkp_input_listener {
+    layers = <2>;
+    input-processors = <&zip_temp_layer 2 800>;
+};
 
 &caps_word { continue-list = <LS(INTERNATIONAL_1) MINUS SINGLE_QUOTE BACKSPACE DELETE>; };
 
@@ -103,7 +106,7 @@
         CM_MB3 {
             bindings = <&mkp MB3>;
             key-positions = <19 20>;
-            layers = <3 4>;
+            layers = <2 3>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
         };
@@ -111,7 +114,7 @@
         CM_F11 {
             bindings = <&kp F11>;
             key-positions = <7 8>;
-            layers = <2 4>;
+            layers = <3 4>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
         };
@@ -119,7 +122,7 @@
         CM_F12 {
             bindings = <&kp F12>;
             key-positions = <8 9>;
-            layers = <2 4>;
+            layers = <3 4>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
         };
@@ -129,15 +132,15 @@
             key-positions = <29 30>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
-            layers = <1 2 4>;
+            layers = <1 3 4>;
         };
 
         CM_GRAV {
             bindings = <&kp GRAVE>;
+            key-positions = <0 1>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
-            layers = <2 4>;
-            key-positions = <1 0>;
+            layers = <3 4>;
         };
 
         CM_CAPS {
@@ -145,7 +148,7 @@
             key-positions = <1 2>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
-            layers = <2 4>;
+            layers = <3 4>;
         };
 
         CM_INSE {
@@ -153,7 +156,7 @@
             key-positions = <2 3>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
-            layers = <2 4>;
+            layers = <3 4>;
         };
 
         CM_NUML {
@@ -161,15 +164,15 @@
             key-positions = <3 4>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
-            layers = <2 4>;
+            layers = <3 4>;
         };
 
         CM_SYSR {
             bindings = <&kp SYSREQ>;
-            key-positions = <1 0 2>;
+            key-positions = <0 1 2>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
-            layers = <2 4>;
+            layers = <3 4>;
         };
 
         CM_PUBR {
@@ -177,7 +180,7 @@
             key-positions = <1 2 3>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
-            layers = <2 4>;
+            layers = <3 4>;
         };
 
         CM_SLCK {
@@ -185,7 +188,7 @@
             key-positions = <2 3 4>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
-            layers = <2 4>;
+            layers = <3 4>;
         };
 
         CM_KANA {
@@ -193,7 +196,7 @@
             key-positions = <5 6 7>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
-            layers = <2 4>;
+            layers = <3 4>;
         };
     };
 
@@ -220,7 +223,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_L1BT";
             #binding-cells = <0>;
-            bindings = <&lt 2 INTERNATIONAL_5>, <&kp INTERNATIONAL_4>;
+            bindings = <&lt 4 INTERNATIONAL_5>, <&kp INTERNATIONAL_4>;
 
             tapping-term-ms = <250>;
         };
@@ -248,7 +251,7 @@
         kp_exit_AML: kp_exit_AML {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &tog_off 3>;
+            bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &tog_off 2>;
             label = "KP_EXIT_AML";
             tap-ms = <5>;
         };
@@ -279,17 +282,6 @@
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
-        fn_layer {
-            bindings = <
-&kp F1      &kp F2     &kp F3     &kp F4     &kp F5                             &kp F6           &kp F7          &kp F8          &kp F9           &kp F10
-&kp LC(A)   &none      &none      &none      &kp K_APPLICATION  &trans  &trans  &kp HOME         &kp LEFT_ARROW  &kp UP_ARROW    &kp RIGHT_ARROW  &kp END
-&kp LC(Z)   &kp LC(X)  &kp LC(C)  &kp LC(V)  &none              &trans  &trans  &kp PRINTSCREEN  &kp PAGE_UP     &kp DOWN_ARROW  &kp PAGE_DOWN    &kp RIGHT_ALT
-&kp ESCAPE  &trans     &trans     &trans     &kp SPACE          &trans  &trans  &trans                                                            &trans
-            >;
-
-            sensor-bindings = <&inc_dec_kp C_BRI_DN C_BRI_UP>;
-        };
-
         mouse_layer {
             bindings = <
 &trans  &trans        &trans        &trans                                &trans                                                       &trans                                 &trans    &trans          &trans    &trans
@@ -303,21 +295,32 @@
 
         mouse_st_layer {
             bindings = <
-&kp F1      &kp F2     &kp F3     &kp F4     &kp F5                             &kp F6           &kp F7       &kp F8          &kp F9         &kp F10
-&kp LC(A)   &none      &none      &none      &kp K_APPLICATION  &trans  &trans  &kp HOME         &mkp MB1     &msc SCRL_UP    &mkp MB2       &kp END
-&kp LC(Z)   &kp LC(X)  &kp LC(C)  &kp LC(V)  &none              &trans  &trans  &kp PRINTSCREEN  &kp PAGE_UP  &msc SCRL_DOWN  &kp PAGE_DOWN  &kp RIGHT_ALT
-&kp ESCAPE  &trans     &trans     &trans     &kp SPACE          &mo 2   &trans  &trans                                                       &trans
+&kp F1      &kp F2     &kp F3      &kp F4     &kp F5                             &kp F6           &kp F7       &kp F8          &kp F9         &kp F10
+&kp LC(A)   &none      &kp LG(TAB) &kp LG(V)  &kp K_APPLICATION  &trans  &trans  &kp HOME         &mkp MB1     &msc SCRL_UP    &mkp MB2       &kp END
+&kp LC(Z)   &kp LC(X)  &kp LC(C)   &kp LC(V)  &none              &trans  &trans  &kp PRINTSCREEN  &kp PAGE_UP  &msc SCRL_DOWN  &kp PAGE_DOWN  &kp RIGHT_ALT
+&kp ESCAPE  &trans     &trans      &trans     &kp SPACE          &mo 4   &trans  &trans                                                       &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOLUME_DOWN>;
         };
 
+        fn_layer {
+            bindings = <
+&kp F1      &kp F2     &kp F3      &kp F4     &kp F5                             &kp F6           &kp F7          &kp F8          &kp F9           &kp F10
+&kp LC(A)   &none      &kp LG(TAB) &kp LG(V)  &kp K_APPLICATION  &trans  &trans  &kp HOME         &kp LEFT_ARROW  &kp UP_ARROW    &kp RIGHT_ARROW  &kp END
+&kp LC(Z)   &kp LC(X)  &kp LC(C)   &kp LC(V)  &none              &trans  &trans  &kp PRINTSCREEN  &kp PAGE_UP     &kp DOWN_ARROW  &kp PAGE_DOWN    &kp RIGHT_ALT
+&kp ESCAPE  &trans     &trans      &trans     &kp SPACE          &trans  &trans  &trans                                                            &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_BRI_DN C_BRI_UP>;
+        };
+
         bt_layer {
             bindings = <
-&none  &none  &none  &none  &none                 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&none  &none  &none  &none  &none  &none  &none   &ind_bat      &none         &none         &none         &none
-&none  &none  &none  &none  &none  &none  &trans  &none         &none         &none         &none         &bt BT_CLR
-&none  &none  &none  &none  &none  &none  &none   &none                                                   &bt BT_CLR_ALL
+&none  &none  &none  &bootloader  &sys_reset                 &sys_reset    &bootloader   &none         &none         &none
+&none  &none  &none  &none        &none      &none  &none   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&none  &none  &none  &none        &none      &none  &trans  &ind_bat      &none         &none         &none         &bt BT_CLR
+&none  &none  &none  &none        &none      &none  &none   &none                                                   &bt BT_CLR_ALL
             >;
         };
     };
