@@ -63,7 +63,7 @@
     zip_temp_layer: zip_temp_layer {
         compatible = "zmk,input-processor-temp-layer";
         require-prior-idle-ms = <120>;
-        excluded-positions = <18 19 20 31 35 36 37 40 41 42>;
+        excluded-positions = <7 18 19 20 35 36 37 40 41 42>;
     };
 
     trackball_listener: trackball_listener {
@@ -83,7 +83,7 @@
     };
 
     aml_active {
-        layers = <0>;
+        layers = <0 2>;
         input-processors =
             <&zip_xy_transform (90)>,
             <&zip_xy_scaler 1 (-1)>,
@@ -91,7 +91,7 @@
     };
 
     aml_inactive {
-        layers = <2 3>;
+        layers = <3>;
         input-processors =
             <&zip_xy_transform (90)>,
             <&zip_xy_scaler 1 (-1)>;
