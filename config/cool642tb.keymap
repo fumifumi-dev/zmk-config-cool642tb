@@ -110,7 +110,7 @@
 
         CM_F11 {
             bindings = <&kp F11>;
-            key-positions = <7 8>;
+            key-positions = <31 32>;
             layers = <3 4>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
@@ -118,23 +118,15 @@
 
         CM_F12 {
             bindings = <&kp F12>;
-            key-positions = <8 9>;
+            key-positions = <32 33>;
             layers = <3 4>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
         };
 
-        CM_PRSC {
-            bindings = <&kp LS(LG(S))>;
-            key-positions = <29 30>;
-            timeout-ms = <30>;
-            require-prior-idle-ms = <50>;
-            layers = <1 3 4>;
-        };
-
         CM_GRAV {
             bindings = <&kp GRAVE>;
-            key-positions = <0 1>;
+            key-positions = <22 23>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
             layers = <3 4>;
@@ -142,7 +134,7 @@
 
         CM_CAPS {
             bindings = <&kp CAPSLOCK>;
-            key-positions = <1 2>;
+            key-positions = <23 24>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
             layers = <3 4>;
@@ -150,7 +142,7 @@
 
         CM_INSE {
             bindings = <&kp INSERT>;
-            key-positions = <2 3>;
+            key-positions = <24 25>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
             layers = <3 4>;
@@ -158,7 +150,7 @@
 
         CM_NUML {
             bindings = <&kp KP_NUMLOCK>;
-            key-positions = <3 4>;
+            key-positions = <25 26>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
             layers = <3 4>;
@@ -166,7 +158,7 @@
 
         CM_SYSR {
             bindings = <&kp SYSREQ>;
-            key-positions = <0 1 2>;
+            key-positions = <22 23 24>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
             layers = <3 4>;
@@ -174,7 +166,7 @@
 
         CM_PUBR {
             bindings = <&kp PAUSE_BREAK>;
-            key-positions = <1 2 3>;
+            key-positions = <23 24 25>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
             layers = <3 4>;
@@ -182,7 +174,7 @@
 
         CM_SLCK {
             bindings = <&kp SCROLLLOCK>;
-            key-positions = <2 3 4>;
+            key-positions = <24 25 26>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
             layers = <3 4>;
@@ -190,7 +182,7 @@
 
         CM_KANA {
             bindings = <&kp INTERNATIONAL_2>;
-            key-positions = <5 6 7>;
+            key-positions = <29 30 31>;
             timeout-ms = <30>;
             require-prior-idle-ms = <50>;
             layers = <3 4>;
@@ -220,7 +212,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_L1BT";
             #binding-cells = <0>;
-            bindings = <&lt 4 INTERNATIONAL_5>, <&kp INTERNATIONAL_4>;
+            bindings = <&lt 1 INTERNATIONAL_5>, <&kp INTERNATIONAL_4>;
 
             tapping-term-ms = <250>;
         };
@@ -262,7 +254,7 @@
 &kp Q       &kp W         &kp E         &kp R                 &kp T                                                  &kp Y                 &kp U  &kp I      &kp O       &kp P
 &kp A       &kp S         &kp D         &kp F                 &kp G        &kp C_MUTE   &kp LG(LA(K))                &kp H                 &kp J  &kp K      &kp L       &mm_minus
 &kp Z       &kp X         &kp C         &kp V                 &kp B        &lt 5 LG(P)  &lt 5 C_MUTE                 &kp N                 &kp M  &kp COMMA  &kp PERIOD  &mm_scln
-&caps_word  &kp LEFT_GUI  &kp LEFT_ALT  &mt LEFT_CONTROL TAB  &lt 1 SPACE  &td_l1bt     &mt RIGHT_CONTROL BACKSPACE  &mt LEFT_SHIFT ENTER                                &mt RIGHT_SHIFT DELETE
+&caps_word  &kp LEFT_GUI  &kp LEFT_ALT  &mt LEFT_CONTROL TAB  &lt 4 SPACE  &td_l1bt     &mt RIGHT_CONTROL BACKSPACE  &mt LEFT_SHIFT ENTER                                &mt RIGHT_SHIFT DELETE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -270,9 +262,9 @@
 
         symbol_layer {
             bindings = <
-&kp EXCLAMATION   &kp QUESTION  &kp UNDERSCORE  &kp AMPERSAND            &kp PLUS                             &kp INTERNATIONAL_3  &kp N7        &kp N8        &kp N9        &kp COLON
-&kp CARET         &kp HASH      &kp DOLLAR      &kp AT_SIGN              &kp LEFT_BRACE       &trans  &trans  &none                &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp DOUBLE_QUOTES
-&kp LEFT_BRACKET  &kp PERCENT   &kp EQUAL       &kp LS(INTERNATIONAL_3)  &kp INTERNATIONAL_1  &trans  &trans  &kp PRINTSCREEN      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH
+&kp EXCLAMATION   &kp QUESTION  &kp UNDERSCORE  &kp AMPERSAND            &kp PLUS                             &kp PRINTSCREEN      &kp N7        &kp N8        &kp N9        &kp COLON
+&kp CARET         &kp HASH      &kp DOLLAR      &kp AT_SIGN              &kp LEFT_BRACE       &trans  &trans  &kp INTERNATIONAL_3  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp DOUBLE_QUOTES
+&kp LEFT_BRACKET  &kp PERCENT   &kp EQUAL       &kp LS(INTERNATIONAL_3)  &kp INTERNATIONAL_1  &trans  &trans  &none                &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH
 &kp ESCAPE        &trans        &trans          &trans                   &trans               &trans  &trans  &kp NUMBER_0                                                   &trans
             >;
 
@@ -281,9 +273,9 @@
 
         mouse_layer {
             bindings = <
-&trans  &trans        &trans        &trans                                &trans                                                       &trans                                 &trans    &trans          &trans    &trans
-&trans  &trans        &trans        &trans                                &trans  &trans  &trans                                       &trans                                 &mkp MB1  &msc SCRL_UP    &mkp MB2  &trans
-&trans  &trans        &trans        &trans                                &trans  &trans  &trans                                       &trans                                 &trans    &msc SCRL_DOWN  &trans    &trans
+&trans  &trans        &trans        &trans                                &trans                                                       &trans                                 &trans    &msc SCRL_UP    &trans    &trans
+&trans  &trans        &trans        &trans                                &trans  &trans  &trans                                       &trans                                 &mkp MB1  &msc SCRL_DOWN  &mkp MB2  &trans
+&trans  &trans        &trans        &trans                                &trans  &trans  &trans                                       &trans                                 &trans    &trans          &trans    &trans
 &trans  &kp LEFT_GUI  &kp LEFT_ALT  &mt_exit_AML_on_tap LEFT_CONTROL TAB  &trans  &trans  &mt_exit_AML_on_tap RIGHT_CONTROL BACKSPACE  &mt_exit_AML_on_tap RIGHT_SHIFT ENTER                                      &mt_exit_AML_on_tap RIGHT_SHIFT DELETE
             >;
 
@@ -292,10 +284,10 @@
 
         mouse_st_layer {
             bindings = <
-&kp F1      &kp F2     &kp F3       &kp F4     &kp F5                             &kp F6           &kp F7       &kp F8          &kp F9         &kp F10
-&kp LC(A)   &none      &kp LG(TAB)  &kp LG(V)  &kp K_APPLICATION  &trans  &trans  &kp HOME         &mkp MB1     &msc SCRL_UP    &mkp MB2       &kp END
-&kp LC(Z)   &kp LC(X)  &kp LC(C)    &kp LC(V)  &none              &trans  &trans  &kp PRINTSCREEN  &kp PAGE_UP  &msc SCRL_DOWN  &kp PAGE_DOWN  &kp RIGHT_ALT
-&kp ESCAPE  &trans     &trans       &trans     &kp SPACE          &mo 4   &trans  &trans                                                       &trans
+&kp LC(A)   &kp K_APPLICATION  &kp LG(E)  &kp LG(V)  &kp LG(TAB)                  &kp PRINTSCREEN  &kp PAGE_UP  &msc SCRL_UP    &kp PAGE_DOWN  &kp RIGHT_ALT
+&kp LC(Z)   &kp LC(X)          &kp LC(C)  &kp LC(V)  &kp LC(Y)    &trans  &trans  &kp HOME         &mkp MB1     &msc SCRL_DOWN  &mkp MB2       &kp END
+&kp F1      &kp F2             &kp F3     &kp F4     &kp F5       &trans  &trans  &kp F6           &kp F7       &kp F8          &kp F9         &kp F10
+&kp ESCAPE  &trans             &trans     &trans     &mo 4        &tog 3  &trans  &trans                                                       &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOLUME_DOWN>;
@@ -303,10 +295,10 @@
 
         fn_layer {
             bindings = <
-&kp F1      &kp F2     &kp F3       &kp F4     &kp F5                             &kp F6           &kp F7          &kp F8          &kp F9           &kp F10
-&kp LC(A)   &none      &kp LG(TAB)  &kp LG(V)  &kp K_APPLICATION  &trans  &trans  &kp HOME         &kp LEFT_ARROW  &kp UP_ARROW    &kp RIGHT_ARROW  &kp END
-&kp LC(Z)   &kp LC(X)  &kp LC(C)    &kp LC(V)  &none              &trans  &trans  &kp PRINTSCREEN  &kp PAGE_UP     &kp DOWN_ARROW  &kp PAGE_DOWN    &kp RIGHT_ALT
-&kp ESCAPE  &trans     &trans       &trans     &kp SPACE          &trans  &trans  &trans                                                            &trans
+&kp LC(A)   &kp K_APPLICATION  &kp LG(E)  &kp LG(V)  &kp LG(TAB)                  &kp PRINTSCREEN  &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN    &kp RIGHT_ALT
+&kp LC(Z)   &kp LC(X)          &kp LC(C)  &kp LC(V)  &kp LC(Y)    &trans  &trans  &kp HOME         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END
+&kp F1      &kp F2             &kp F3     &kp F4     &kp F5       &trans  &trans  &kp F6           &kp F7          &kp F8          &kp F9           &kp F10
+&kp ESCAPE  &trans             &trans     &trans     &trans       &none   &trans  &trans                                                            &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_BRI_DN C_BRI_UP>;
