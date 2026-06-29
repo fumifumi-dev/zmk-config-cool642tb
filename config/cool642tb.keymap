@@ -291,7 +291,7 @@
 &kp EXCLAMATION   &kp QUESTION  &kp UNDERSCORE  &kp AMPERSAND            &kp PLUS                             &mm_prtsc            &kp N7        &kp N8        &kp N9        &kp COLON
 &kp CARET         &kp HASH      &kp DOLLAR      &kp AT_SIGN              &kp LEFT_BRACE       &trans  &trans  &kp INTERNATIONAL_3  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp DOUBLE_QUOTES
 &kp LEFT_BRACKET  &kp PERCENT   &kp EQUAL       &kp LS(INTERNATIONAL_3)  &kp INTERNATIONAL_1  &trans  &trans  &none                &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH
-&caps_word　       &trans        &trans          &trans                   &trans               &trans  &trans  &kp NUMBER_0                                                   &trans
+&caps_word         &trans        &trans          &trans                  &trans               &trans  &trans  &kp NUMBER_0                                                   &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_BRI_DN C_BRI_UP>;
@@ -310,10 +310,10 @@
 
         mouse_st_layer {
             bindings = <
-&kp F1      &kp F2             &kp F3     &kp F4     &kp F5       　　　　                 &mm_prtsc  &kp PAGE_UP  &msc SCRL_UP    &kp PAGE_DOWN  &kp RIGHT_ALT
-&kp LC(A)   &kp LC(S)          &kp LC(D)  &kp LC(F)  &kp LC(G)  　　　　   &trans  &trans  &kp HOME   &mkp MB1     &msc SCRL_DOWN  &mkp MB2       &kp END
+&kp F1      &kp F2             &kp F3     &kp F4     &kp F5                            &mm_prtsc  &kp PAGE_UP  &msc SCRL_UP    &kp PAGE_DOWN  &kp RIGHT_ALT
+&kp LC(A)   &kp LC(S)          &kp LC(D)  &kp LC(F)  &kp LC(G)         &trans  &trans  &kp HOME   &mkp MB1     &msc SCRL_DOWN  &mkp MB2       &kp END
 &kp LC(Z)   &kp LC(X)          &kp LC(C)  &kp LC(V)  &kp K_APPLICATION &trans  &trans  &kp F6     &kp F7       &kp F8          &kp F9         &kp F10
-&trans      &trans             &trans     &trans     &mo 4    　　　　     &tog 3  &trans  &trans                                                 &trans
+&trans      &trans             &trans     &trans     &mo 4             &tog 3  &trans  &trans                                                 &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -321,10 +321,10 @@
 
         fn_layer {
             bindings = <
-&kp F1      &kp F2             &kp F3     &kp F4     &kp F5     　　　　                   &mm_prtsc  &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN    &kp RIGHT_ALT
-&kp LC(A)   &kp LC(S)          &kp LC(D)  &kp LC(F)  &kp LC(G)   　　　　  &trans  &trans  &kp HOME   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END
+&kp F1      &kp F2             &kp F3     &kp F4     &kp F5                            &mm_prtsc  &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN    &kp RIGHT_ALT
+&kp LC(A)   &kp LC(S)          &kp LC(D)  &kp LC(F)  &kp LC(G)         &trans  &trans  &kp HOME   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END
 &kp LC(Z)   &kp LC(X)          &kp LC(C)  &kp LC(V)  &kp K_APPLICATION &trans  &trans  &kp F6     &kp F7          &kp F8          &kp F9           &kp F10
-&trans      &trans             &trans     &trans     &trans    　　　　    &none   &trans  &trans                                                      &trans
+&trans      &trans             &trans     &trans     &trans            &none   &trans  &trans                                                      &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_BRI_DN C_BRI_UP>;
