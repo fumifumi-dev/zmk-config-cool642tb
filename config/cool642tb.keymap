@@ -15,8 +15,8 @@
 
 &mt {
     flavor = "balanced";
-    tapping-term-ms = <200>;
-    quick-tap-ms = <180>;
+    tapping-term-ms = <180>;
+    quick-tap-ms = <150>;
     require-prior-idle-ms = <100>;
 };
 
@@ -240,7 +240,7 @@
             #binding-cells = <0>;
             bindings = <&lt 1 INTERNATIONAL_5>, <&kp INTERNATIONAL_4>;
 
-            tapping-term-ms = <250>;
+            tapping-term-ms = <180>;
         };
 
         tog_off: tog_off {
