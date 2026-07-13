@@ -157,17 +157,9 @@
             layers = <3 4>;
         };
 
-        CM_SYSR {
-            bindings = <&kp SYSREQ>;
-            key-positions = <0 1 2>;
-            timeout-ms = <40>;
-            require-prior-idle-ms = <50>;
-            layers = <3 4>;
-        };
-
         CM_PUBR {
             bindings = <&kp PAUSE_BREAK>;
-            key-positions = <1 2 3>;
+            key-positions = <0 1 2>;
             timeout-ms = <40>;
             require-prior-idle-ms = <50>;
             layers = <3 4>;
@@ -175,7 +167,7 @@
 
         CM_SLCK {
             bindings = <&kp SCROLLLOCK>;
-            key-positions = <2 3 4>;
+            key-positions = <1 2 3>;
             timeout-ms = <40>;
             require-prior-idle-ms = <50>;
             layers = <3 4>;
@@ -183,7 +175,7 @@
 
         CM_KANA {
             bindings = <&kp INTERNATIONAL_2>;
-            key-positions = <29 30 31>;
+            key-positions = <2 3 4>;
             timeout-ms = <40>;
             require-prior-idle-ms = <50>;
             layers = <3 4>;
