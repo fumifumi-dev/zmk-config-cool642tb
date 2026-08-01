@@ -119,7 +119,7 @@
 
         CM_MB3 {
             bindings = <&mkp MB3>;
-            key-positions = <19 20>;
+            key-positions = <18 20>;
             layers = <2 3>;
             timeout-ms = <40>;
             require-prior-idle-ms = <50>;
@@ -291,10 +291,10 @@
 
         mouse_layer {
             bindings = <
-&trans  &trans        &trans        &trans                                &trans                                                       &trans                                 &trans    &msc SCRL_UP    &trans    &trans
-&trans  &trans        &trans        &trans                                &trans  &trans  &trans                                       &trans                                 &mkp MB1  &msc SCRL_DOWN  &mkp MB2  &trans
-&trans  &trans        &trans        &trans                                &trans  &trans  &trans                                       &trans                                 &trans    &trans          &trans    &trans
-&trans  &kp LEFT_GUI  &kp LEFT_ALT  &mt_exit_AML_on_tap LEFT_CONTROL TAB  &trans  &trans  &mt_exit_AML_on_tap RIGHT_CONTROL BACKSPACE  &mt_exit_AML_on_tap RIGHT_SHIFT ENTER                                      &mt_exit_AML_on_tap RIGHT_SHIFT DELETE
+&trans  &trans        &trans        &trans                                &trans                                                       &trans                                 &trans    &trans  &trans    &trans
+&trans  &trans        &trans        &trans                                &trans  &trans  &trans                                       &trans                                 &mkp MB1  &trans  &mkp MB2  &trans
+&trans  &trans        &trans        &trans                                &trans  &trans  &trans                                       &trans                                 &trans    &trans  &trans    &trans
+&trans  &kp LEFT_GUI  &kp LEFT_ALT  &mt_exit_AML_on_tap LEFT_CONTROL TAB  &trans  &trans  &mt_exit_AML_on_tap RIGHT_CONTROL BACKSPACE  &mt_exit_AML_on_tap RIGHT_SHIFT ENTER                              &mt_exit_AML_on_tap RIGHT_SHIFT DELETE
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
