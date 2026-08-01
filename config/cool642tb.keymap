@@ -238,9 +238,10 @@
         td_l1bt_LM: td_l1bt_LM {
             compatible = "zmk,behavior-hold-tap";
             label = "td_l1bt_LM";
-            #binding-cells = <0>;
-            bindings = <&mo 4 &tog 3>;
+            #binding-cells = <2>;
+            bindings = <&mo>, <&tog>;
 
+            flavor = "hold-preferred";
             tapping-term-ms = <180>;
         };
 
@@ -311,10 +312,10 @@
 
         mouse_st_layer {
             bindings = <
-&kp F1      &kp F2             &kp F3     &kp F4     &kp F5                                &mm_prtsc  &kp PAGE_UP  &msc SCRL_UP    &kp PAGE_DOWN  &kp RIGHT_ALT
-&kp LC(A)   &kp LC(S)          &kp LC(D)  &kp LC(F)  &kp LC(G)         &trans      &trans  &kp HOME   &mkp MB1     &msc SCRL_DOWN  &mkp MB2       &kp END
-&kp LC(Z)   &kp LC(X)          &kp LC(C)  &kp LC(V)  &kp K_APPLICATION &trans      &trans  &kp F6     &kp F7       &kp F8          &kp F9         &kp F10
-&trans      &trans             &trans     &trans     &kp SPACE         &td_l1bt_LM &trans  &trans                                                 &trans
+&kp F1      &kp F2             &kp F3     &kp F4     &kp F5                                    &mm_prtsc  &kp PAGE_UP  &msc SCRL_UP    &kp PAGE_DOWN  &kp RIGHT_ALT
+&kp LC(A)   &kp LC(S)          &kp LC(D)  &kp LC(F)  &kp LC(G)         &trans          &trans  &kp HOME   &mkp MB1     &msc SCRL_DOWN  &mkp MB2       &kp END
+&kp LC(Z)   &kp LC(X)          &kp LC(C)  &kp LC(V)  &kp K_APPLICATION &trans          &trans  &kp F6     &kp F7       &kp F8          &kp F9         &kp F10
+&trans      &trans             &trans     &trans     &kp SPACE         &td_l1bt_LM 4 3 &trans  &trans                                                 &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
