@@ -239,7 +239,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "td_l1bt_LM";
             #binding-cells = <0>;
-            bindings = <&mo 4>, <&tog 3>;
+            bindings = <&mo 4 &tog 3>;
 
             tapping-term-ms = <180>;
         };
