@@ -5,6 +5,47 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
+#define JP_ZKHK GRAVE
+#define JP_MINS MINUS
+#define JP_CIRC EQUAL
+#define JP_YEN  INT3
+#define JP_AT   LEFT_BRACKET
+#define JP_LBRC RIGHT_BRACKET
+#define JP_EISU CAPSLOCK
+#define JP_SCLN SEMICOLON
+#define JP_COLN SINGLE_QUOTE
+#define JP_RBRC NON_US_HASH
+#define JP_COMM COMMA
+#define JP_DOT  DOT
+#define JP_SLSH SLASH
+#define JP_BSLS INT1
+#define JP_MHEN INT5
+#define JP_HENK INT4
+#define JP_KANA INT2
+
+#define JP_EXLM LS(N1)
+#define JP_DQUO LS(N2)
+#define JP_HASH LS(N3)
+#define JP_DLR  LS(N4)
+#define JP_PERC LS(N5)
+#define JP_AMPR LS(N6)
+#define JP_QUOT LS(N7)
+#define JP_LPRN LS(N8)
+#define JP_RPRN LS(N9)
+#define JP_EQL  LS(JP_MINS)
+#define JP_TILD LS(JP_CIRC)
+#define JP_PIPE LS(JP_YEN)
+#define JP_GRV  LS(JP_AT)
+#define JP_LCBR LS(JP_LBRC)
+#define JP_CAPS LS(JP_EISU)
+#define JP_PLUS LS(JP_SCLN)
+#define JP_ASTR LS(JP_COLN)
+#define JP_RCBR LS(JP_RBRC)
+#define JP_LABK LS(JP_COMM)
+#define JP_RABK LS(JP_DOT)
+#define JP_QUES LS(JP_SLSH)
+#define JP_UNDS LS(JP_BSLS)
+
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 40
 #define MAIN 0
 #define SYMBOL 1
@@ -31,7 +72,7 @@
     };
 };
 
-&caps_word { continue-list = <LS(INTERNATIONAL_1) MINUS SINGLE_QUOTE BACKSPACE DELETE>; };
+&caps_word { continue-list = <JP_UNDS JP_MINS JP_COLN BACKSPACE DELETE>; };
 
 / {
     vbatt {
@@ -70,7 +111,7 @@
         };
 
         CM_LPRN {
-            bindings = <&kp ASTERISK>;
+            bindings = <&kp JP_LPRN>;
             key-positions = <6 7>;
             layers = <1>;
             timeout-ms = <40>;
@@ -78,7 +119,7 @@
         };
 
         CM_RPRN {
-            bindings = <&kp LEFT_PARENTHESIS>;
+            bindings = <&kp JP_RPRN>;
             key-positions = <7 8>;
             layers = <1>;
             timeout-ms = <40>;
@@ -86,7 +127,7 @@
         };
 
         CM_LBRC {
-            bindings = <&kp RIGHT_BRACKET>;
+            bindings = <&kp JP_LBRC>;
             key-positions = <18 19>;
             layers = <1>;
             timeout-ms = <40>;
@@ -94,7 +135,7 @@
         };
 
         CM_RBRC {
-            bindings = <&kp NON_US_HASH>;
+            bindings = <&kp JP_RBRC>;
             key-positions = <19 20>;
             layers = <1>;
             timeout-ms = <40>;
@@ -102,7 +143,7 @@
         };
 
         CM_LCBR {
-            bindings = <&kp RIGHT_BRACE>;
+            bindings = <&kp JP_LCBR>;
             key-positions = <30 31>;
             layers = <1>;
             timeout-ms = <40>;
@@ -110,7 +151,7 @@
         };
 
         CM_RCBR {
-            bindings = <&kp PIPE>;
+            bindings = <&kp JP_RCBR>;
             key-positions = <31 32>;
             layers = <1>;
             timeout-ms = <40>;
@@ -126,7 +167,7 @@
         };
 
         CM_GRAV {
-            bindings = <&kp GRAVE>;
+            bindings = <&kp JP_ZKHK>;
             key-positions = <0 1>;
             timeout-ms = <40>;
             require-prior-idle-ms = <50>;
@@ -134,7 +175,7 @@
         };
 
         CM_CAPS {
-            bindings = <&kp CAPSLOCK>;
+            bindings = <&kp JP_CAPS>;
             key-positions = <1 2>;
             timeout-ms = <40>;
             require-prior-idle-ms = <50>;
@@ -174,7 +215,7 @@
         };
 
         CM_KANA {
-            bindings = <&kp INTERNATIONAL_2>;
+            bindings = <&kp JP_KANA>;
             key-positions = <2 3 4>;
             timeout-ms = <40>;
             require-prior-idle-ms = <50>;
@@ -202,7 +243,7 @@
         mm_scln: mm_scln {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_SCLN";
-            bindings = <&kp SEMICOLON>, <&kp SINGLE_QUOTE>;
+            bindings = <&kp JP_SCLN>, <&kp JP_COLN>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -211,7 +252,7 @@
         mm_minus: mm_minus {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_MINUS";
-            bindings = <&kp MINUS>, <&kp LS(INTERNATIONAL_1)>;
+            bindings = <&kp JP_MINS>, <&kp JP_UNDS>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -230,7 +271,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_L1BT";
             #binding-cells = <0>;
-            bindings = <&lt 4 INTERNATIONAL_5>, <&kp INTERNATIONAL_4>;
+            bindings = <&lt 4 JP_MHEN>, <&kp JP_HENK>;
 
             tapping-term-ms = <180>;
         };
@@ -290,10 +331,10 @@
 
         symbol_layer {
             bindings = <
-&kp EXCLAMATION   &kp QUESTION  &kp UNDERSCORE  &kp AMPERSAND            &kp PLUS                             &mm_prtsc            &kp N7        &kp N8        &kp N9        &kp COLON
-&kp CARET         &kp HASH      &kp DOLLAR      &kp AT_SIGN              &kp LEFT_BRACE       &trans  &trans  &kp INTERNATIONAL_3  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp DOUBLE_QUOTES
-&kp LEFT_BRACKET  &kp PERCENT   &kp EQUAL       &kp LS(INTERNATIONAL_3)  &kp INTERNATIONAL_1  &trans  &trans  &none                &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH
-&caps_word         &trans        &trans          &trans                  &trans               &trans  &trans  &kp NUMBER_0                                                   &trans
+&kp JP_EXLM  &kp JP_QUES  &kp JP_EQL   &kp JP_QUOT  &kp JP_TILD                      &mm_prtsc    &kp N7  &kp N8  &kp N9  &kp JP_PLUS
+&kp JP_AMPR  &kp JP_HASH  &kp JP_DLR   &kp JP_DQUO  &kp JP_GRV   &trans  &trans      &kp JP_YEN   &kp N4  &kp N5  &kp N6  &kp JP_ASTR
+&kp JP_AT    &kp JP_PERC  &kp JP_CIRC  &kp JP_PIPE  &kp JP_BSLS  &trans  &trans      &none        &kp N1  &kp N2  &kp N3  &kp JP_SLSH
+&caps_word   &trans       &trans       &trans       &trans       &trans  &trans      &kp N0                               &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_BRI_DN C_BRI_UP>;
