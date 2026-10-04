@@ -86,7 +86,9 @@
 
     arrow_mode {
         layers = <1>;
-        input-processors = <&zip_keybind_keys>;
+        input-processors =
+            <&zip_xy_transform TB_TRANSFORM>,
+            <&zip_keybind_keys>;
     };
 
     aml_inactive {
