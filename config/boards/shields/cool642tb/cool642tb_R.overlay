@@ -1,6 +1,9 @@
 #include "cool642tb.dtsi"
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <dt-bindings/zmk/input_transform.h>
+
+#define TB_TRANSFORM (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)
 
 &default_transform {
     col-offset = <6>;
@@ -60,12 +63,6 @@
 };
 
 / {
-    zip_temp_layer: zip_temp_layer {
-        compatible = "zmk,input-processor-temp-layer";
-        require-prior-idle-ms = <120>;
-        excluded-positions = <18 20 36 37 40 41 42>;
-    };
-
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
@@ -88,16 +85,13 @@
 
     aml_inactive {
         layers = <3>;
-        input-processors =
-            <&zip_xy_transform (90)>,
-            <&zip_xy_scaler 1 (-1)>;
+        input-processors = <&zip_xy_transform TB_TRANSFORM>;
     };
 
     aml_active {
         layers = <0 2>;
         input-processors =
-            <&zip_xy_transform (90)>,
-            <&zip_xy_scaler 1 (-1)>,
+            <&zip_xy_transform TB_TRANSFORM>,
             <&zip_temp_layer 2 10000>;
     };
 };
