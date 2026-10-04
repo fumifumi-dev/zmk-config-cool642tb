@@ -92,7 +92,7 @@
         layers = <1>;
         input-processors =
             <&zip_xy_transform TB_TRANSFORM>,
-            <&arrow_keys>;
+            <&zip_keybind_keys>;
     };
 
     aml_active {
