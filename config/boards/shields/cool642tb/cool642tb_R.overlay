@@ -74,6 +74,7 @@
 
     trackball_disable {
         layers = <5>;
+        input-processors = <&zip_xy_scaler 0 1>;
     };
 
     scroller {
@@ -91,7 +92,6 @@
     arrow_mode {
         layers = <1>;
         input-processors =
-            <&zip_xy_transform TB_TRANSFORM>,
             <&zip_keybind_keys>,
             <&zip_xy_scaler 0 1>;
     };
